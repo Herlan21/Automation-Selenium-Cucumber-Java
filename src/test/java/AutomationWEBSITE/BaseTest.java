@@ -1,5 +1,7 @@
 package AutomationWEBSITE;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,6 +13,10 @@ public class BaseTest {
 
     public static WebDriver driver;
     public static WebDriverWait wait;
+
+    public static byte[] takeScreenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+    }
 
     public static void setupDriver(){
         ChromeOptions options = new ChromeOptions();

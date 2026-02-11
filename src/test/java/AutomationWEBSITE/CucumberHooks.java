@@ -27,7 +27,7 @@ public class CucumberHooks {
 
             // pause 20 detik jika gagal
             try {
-                Thread.sleep(20_000);
+                Thread.sleep(10_000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }

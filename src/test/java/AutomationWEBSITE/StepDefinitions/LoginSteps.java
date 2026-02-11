@@ -12,13 +12,17 @@ import io.cucumber.java.en.Then;
 public class LoginSteps extends BaseTest {
 
     private LoginPage loginPage;
-    private String currentUsername;
-    private String currentPassword;
+    private String currentUsername = "";
+    private String currentPassword = "";
 
     // Initialize Driver
     @Before
     public void setup(){
         loginPage = new LoginPage(driver);
+
+    // Reset State
+        currentUsername = "";
+        currentPassword = "";
     }
 
     //** STEP DEFINITON ** //
@@ -46,11 +50,23 @@ public void userInputUsernameWithUsername(String username) {
 //        loginPage.inputPassword(password);
 //    }
 
+//    @And("user click form and input password with {string}")
+//    public void userInputPasswordWithPassword(String password) {
+//        currentPassword = password;
+//        if (!password.isEmpty()) {
+//            loginPage.inputPassword(password);
+//        }
+//    }
+
     @And("user click form and input password with {string}")
     public void userInputPasswordWithPassword(String password) {
-        currentPassword = password;
-        if (!password.isEmpty()) {
-            loginPage.inputPassword(password);
+        currentPassword = password == null ? "" : password;
+
+        if (currentPassword.isEmpty()) {
+            // 🔥 trigger validation secara nyata
+            loginPage.triggerEmptyPasswordValidation();
+        } else {
+            loginPage.inputPassword(currentPassword);
         }
     }
 
@@ -64,11 +80,7 @@ public void userInputUsernameWithUsername(String username) {
     }
 
     //  Negative Case
-//    @Then("user get alert")
-//    public void usergetalert(){
-//        loginPage.validateAlertLoginPage();
-//        loginPage.WrongCredAlertMethod();
-//    }
+
 
     @Then("user get login error based on input condition")
     public void userGetLoginErrorBasedOnCondition() {
@@ -80,9 +92,17 @@ public void userInputUsernameWithUsername(String username) {
                     currentPassword
             );
         }
+
         // CASE 2: WRONG CREDENTIAL
         else {
             loginPage.validateWrongCredentialAlert();
         }
     }
+
+//    @Then("user get alert")
+//    public void usergetalert(){
+//        loginPage.validateAlertLoginPage();
+//        loginPage.WrongCredAlertMethod();
+//    }
+
 }

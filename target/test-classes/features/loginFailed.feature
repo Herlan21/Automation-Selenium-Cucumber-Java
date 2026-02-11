@@ -16,7 +16,6 @@ Feature: Login - Negative Case
       | admin           |                  |
       |                 | password          |
 
-
 #@login
 #  Feature: Login
 ##    Background: User access CMS JIP URL and proceed to login page

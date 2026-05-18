@@ -1,4 +1,4 @@
-package AutomationWEBSITE;
+package AutomationWEBSITE_JIP;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

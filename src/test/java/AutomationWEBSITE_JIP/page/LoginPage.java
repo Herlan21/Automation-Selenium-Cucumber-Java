@@ -1,7 +1,7 @@
-package AutomationWEBSITE.page;
+package AutomationWEBSITE_JIP.page;
 
 
-import AutomationWEBSITE.BaseTest;
+import AutomationWEBSITE_JIP.BaseTest;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -69,36 +69,6 @@ public class LoginPage extends BaseTest {
                 "Wrong credential notification should NOT be displayed"
         );
     }
-
-//    public void validateInlineAlertForEmptyField(String username, String password) {
-//
-//        if (username.isEmpty()) {
-//            assert isElementDisplayed(inputUsernameAlert);
-//        } else {
-//            assert !isElementDisplayed(inputUsernameAlert);
-//        }
-//
-//        if (password.isEmpty()) {
-//            assert isElementDisplayed(inputPasswordAlert);
-//        } else {
-//            assert !isElementDisplayed(inputPasswordAlert);
-//        }
-//
-//        // memastikan TIDAK ADA push notification
-//        assert !isElementDisplayed(wrongCredAlert);
-//    }
-
-    // ===== WRONG CREDENTIAL ALERT (PUSH NOTIFICATION) =====
-//    public void validateWrongCredentialAlert() {
-//        Assert.assertFalse(isElementDisplayed(wrongCredAlert));
-//
-//        // memastikan TIDAK ADA inline alert
-////        assert !isElementDisplayed(inputUsernameAlert);
-////        assert !isElementDisplayed(inputPasswordAlert);
-//
-//        Assert.assertTrue(isElementDisplayed(inputUsernameAlert));
-//        Assert.assertFalse(isElementDisplayed(wrongCredAlert));
-//    }
 
 public void validateWrongCredentialAlert() {
     try {

@@ -1,11 +1,11 @@
-package AutomationWEBSITE;
+package AutomationWEBSITE_JIP;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {"src/test/resources/features"},
-        glue = {"AutomationWEBSITE"},
+        glue = {"AutomationWEBSITE_JIP"},
         plugin = {
                 "pretty",
                 "html:target/report-cucumber.html",

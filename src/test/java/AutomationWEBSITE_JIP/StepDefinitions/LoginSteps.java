@@ -1,7 +1,7 @@
-package AutomationWEBSITE.StepDefinitions;
+package AutomationWEBSITE_JIP.StepDefinitions;
 
-import AutomationWEBSITE.BaseTest;
-import AutomationWEBSITE.page.LoginPage;
+import AutomationWEBSITE_JIP.BaseTest;
+import AutomationWEBSITE_JIP.page.LoginPage;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -30,12 +30,6 @@ public class LoginSteps extends BaseTest {
     public void userIsLaunchWebsite() {
     }
 
-//    @And("user click form and input username with {string}")
-//    public void userInputUsernameWithUsername(String username) {
-//        loginPage.validateLoginPage();
-//        loginPage.inputUsername(username);
-//    }
-
 @And("user click form and input username with {string}")
 public void userInputUsernameWithUsername(String username) {
     currentUsername = username;
@@ -44,19 +38,6 @@ public void userInputUsernameWithUsername(String username) {
         loginPage.inputUsername(username);
     }
 }
-
-//    @And("user click form and input password with {string}")
-//    public void userInputPasswordWithPassword(String password) {
-//        loginPage.inputPassword(password);
-//    }
-
-//    @And("user click form and input password with {string}")
-//    public void userInputPasswordWithPassword(String password) {
-//        currentPassword = password;
-//        if (!password.isEmpty()) {
-//            loginPage.inputPassword(password);
-//        }
-//    }
 
     @And("user click form and input password with {string}")
     public void userInputPasswordWithPassword(String password) {
@@ -80,8 +61,6 @@ public void userInputUsernameWithUsername(String username) {
     }
 
     //  Negative Case
-
-
     @Then("user get login error based on input condition")
     public void userGetLoginErrorBasedOnCondition() {
 
@@ -98,11 +77,5 @@ public void userInputUsernameWithUsername(String username) {
             loginPage.validateWrongCredentialAlert();
         }
     }
-
-//    @Then("user get alert")
-//    public void usergetalert(){
-//        loginPage.validateAlertLoginPage();
-//        loginPage.WrongCredAlertMethod();
-//    }
 
 }

@@ -1,4 +1,4 @@
-package AutomationWEBSITE;
+package AutomationWEBSITE_JIP;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
